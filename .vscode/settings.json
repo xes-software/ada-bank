@@ -1,0 +1,23 @@
+{
+	// Enable format on save for the project
+	"editor.formatOnSave": true,
+
+	// Use the Svelte formatter for .svelte files
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+
+	// Optional: Use Prettier for other languages if needed
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// Enable Prettier settings
+	"prettier.enable": true
+}
