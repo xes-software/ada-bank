@@ -19,8 +19,8 @@
 			<Dialog.Header>
 				<Dialog.Title>Connect a Cardano Web Wallet</Dialog.Title>
 				<Dialog.Description>
-					Web wallets allow you to interact with the Blockchain. When you connect; it's secure and
-					we can't see any of your private information.
+					Web wallets allow you to interact with the blockchain. It's secure and we can't see any of
+					your private information.
 				</Dialog.Description>
 			</Dialog.Header>
 
