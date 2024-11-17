@@ -14,7 +14,7 @@
 		"test": "npm run test:unit -- --run"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-vercel": "^5.4.7",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@tailwindcss/typography": "^0.5.15",
@@ -42,9 +42,7 @@
 		"vite-plugin-node-polyfills": "^0.22.0",
 		"vite-plugin-top-level-await": "^1.4.4",
 		"vite-plugin-wasm": "^3.3.0",
-		"vitest": "^2.0.4"
-	},
-	"dependencies": {
+		"vitest": "^2.0.4",
 		"@meshsdk/core": "^1.7.14",
 		"lucide-svelte": "^0.456.0"
 	}
