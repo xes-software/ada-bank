@@ -43,7 +43,7 @@
 		"vite-plugin-top-level-await": "1.4.4",
 		"vite-plugin-wasm": "3.3.0",
 		"vitest": "2.1.5",
-		"@meshsdk/core": "1.7.15",
+		"@meshsdk/core": "1.7.17",
 		"lucide-svelte": "0.460.1"
 	}
 }
