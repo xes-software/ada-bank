@@ -1,4 +1,4 @@
 <svelte:head>
-	<title>Insights into Professional Web3 Development</title>
+	<title>Contact Professional Web3 Developers</title>
 	<meta name="description" content="" />
 </svelte:head>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
-	import { GraduationCap, FileText, Menu } from 'lucide-svelte';
+	import { GraduationCap, FileText, Menu, Link } from 'lucide-svelte';
 	import Logo from '$lib/components/icons/Logo.svelte';
 	import { buttonVariants } from '$lib/components/ui/button/index.js';
 	import * as Sheet from '$lib/components/ui/sheet';
@@ -23,6 +23,14 @@
 					<GraduationCap></GraduationCap>
 					<span>Learn</span>
 				</a>
+				<a
+					href="/contact"
+					class="ml-4 flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+					class:text-primary={$page.url.pathname.startsWith('/contact')}
+				>
+					<Link></Link>
+					<span>Contact</span>
+				</a>
 
 				<a
 					href="/insights"
@@ -40,14 +48,14 @@
 				><Menu></Menu></Sheet.Trigger
 			>
 
-			<Sheet.Content side="left" class="flex flex-col">
+			<Sheet.Content side="left" class="flex flex-col text-muted-foreground">
 				<nav class="grid gap-2 text-lg font-medium">
 					<a href="/" class="mb-4 flex items-center justify-center gap-2 text-lg font-semibold">
 						<Logo className="w-32" />
 					</a>
 					<a
 						href="/learn"
-						class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+						class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground"
 						class:text-foreground={$page.url.pathname.startsWith('/learn')}
 						class:bg-muted={$page.url.pathname.startsWith('/learn')}
 					>
@@ -55,8 +63,17 @@
 						<span>Learn</span>
 					</a>
 					<a
+						href="/contact"
+						class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground"
+						class:text-foreground={$page.url.pathname.startsWith('/contact')}
+						class:bg-muted={$page.url.pathname.startsWith('/contact')}
+					>
+						<Link></Link>
+						<span>Contact</span>
+					</a>
+					<a
 						href="/insights"
-						class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+						class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground"
 						class:text-foreground={$page.url.pathname.startsWith('/insights')}
 						class:bg-muted={$page.url.pathname.startsWith('/insights')}
 					>
