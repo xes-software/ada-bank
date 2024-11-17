@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import { buttonVariants } from '$lib/components/ui/button';
 	import { ArrowRightIcon } from 'lucide-svelte';
 </script>
 
@@ -18,7 +18,7 @@
 		<span
 			class="inline-flex h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] flex-col overflow-hidden text-indigo-500 md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] lg:h-[calc(theme(fontSize.8xl)*theme(lineHeight.tight))]"
 		>
-			<ul class="animate-text-slide block text-center leading-tight [&_li]:block">
+			<ul class="block animate-text-slide text-center leading-tight [&_li]:block">
 				<li>Decentralized</li>
 				<li>Scalable</li>
 				<li>Secure</li>
@@ -29,15 +29,15 @@
 		</span>
 	</div>
 	<p
-		class="mb-10 mt-12 -translate-y-4 text-balance bg-clip-text text-lg tracking-tight text-gray-400 md:text-xl"
+		class="mb-10 mt-12 -translate-y-4 text-balance bg-clip-text text-lg tracking-tight text-muted-foreground md:text-xl"
 	>
 		We also build fast. Days instead of weeks, months instead of years.
 		<br class="hidden md:block" />
 	</p>
-	<Button class="-translate-y-4 gap-1 rounded-lg text-white ease-in-out dark:text-black">
+	<a href="/contact" class={buttonVariants({ variant: 'default' })}>
 		<span>Let's Build Together</span>
 		<ArrowRightIcon
 			class="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1"
 		/>
-	</Button>
+	</a>
 </div>

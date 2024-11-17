@@ -11,7 +11,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run"
+		"test": "npm run test:unit -- --run",
+		"aiken:build": "cd aiken-workspace && aiken build --out ./src/lib/validators/plutus.json"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "5.4.7",
