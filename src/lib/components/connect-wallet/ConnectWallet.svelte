@@ -2,7 +2,7 @@
 	import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
 	import { MeshSdkState } from '$lib/state/mesh-sdk.svelte';
 	import { BrowserWalletState } from '$lib/state/browser-wallet.svelte';
-	import { Wallet } from 'lucide-svelte';
+	import { TicketX, Wallet } from 'lucide-svelte';
 	import * as Card from '$lib/components/ui/card';
 	import * as Dialog from '$lib/components/ui/dialog';
 </script>
@@ -25,15 +25,24 @@
 			</Dialog.Header>
 
 			<div class="flex flex-wrap justify-center gap-4">
-				{#each MeshSdkState.availableWallets as wallet}
-					<button onclick={() => BrowserWalletState.connectWallet(wallet)}>
-						<Card.Root class="hover:cursor-pointer hover:bg-primary/10">
-							<Card.Content
-								><img class="h-24 w-24" src={wallet.icon} alt={wallet.name} /></Card.Content
-							>
-						</Card.Root>
-					</button>
-				{/each}
+				{#if MeshSdkState.availableWallets.length === 0}
+					<Card.Root class="hover:cursor-pointer hover:bg-primary/10">
+						<Card.Content class="flex flex-col items-center">
+							<TicketX class="h-24 w-24"></TicketX>
+							No Wallet Found.</Card.Content
+						>
+					</Card.Root>
+				{:else}
+					{#each MeshSdkState.availableWallets as wallet}
+						<button onclick={() => BrowserWalletState.connectWallet(wallet)}>
+							<Card.Root class="hover:cursor-pointer hover:bg-primary/10">
+								<Card.Content
+									><img class="h-24 w-24" src={wallet.icon} alt={wallet.name} /></Card.Content
+								>
+							</Card.Root>
+						</button>
+					{/each}
+				{/if}
 			</div>
 			<div class="grid gap-4 py-4">
 				<div class="grid grid-cols-4 items-center gap-4"></div>

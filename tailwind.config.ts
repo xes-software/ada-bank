@@ -2,6 +2,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
 import typography from '@tailwindcss/typography';
+import animate from 'tailwindcss-animate';
 
 const config: Config = {
 	darkMode: ['class'],
@@ -83,16 +84,25 @@ const config: Config = {
 				'caret-blink': {
 					'0%,70%,100%': { opacity: '1' },
 					'20%,50%': { opacity: '0' }
+				},
+				'text-slide': {
+					'0%, 16%': { transform: 'translateY(0%)' },
+					'20%, 36%': { transform: 'translateY(-16.66%)' },
+					'40%, 56%': { transform: 'translateY(-33.33%)' },
+					'60%, 76%': { transform: 'translateY(-50%)' },
+					'80%, 96%': { transform: 'translateY(-66.66%)' },
+					'100%': { transform: 'translateY(-83.33%)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'caret-blink': 'caret-blink 1.25s ease-out infinite'
+				'caret-blink': 'caret-blink 1.25s ease-out infinite',
+				'text-slide': 'text-slide 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite'
 			}
 		}
 	},
-	plugins: [tailwindcssAnimate, typography]
+	plugins: [tailwindcssAnimate, typography, animate]
 };
 
 export default config;
