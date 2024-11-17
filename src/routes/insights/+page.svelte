@@ -4,5 +4,5 @@
 </svelte:head>
 
 <div class="prose">
-	<h1>Content for the insight page</h1>
+	<h1 class="text-foreground">Content for the insight page</h1>
 </div>
