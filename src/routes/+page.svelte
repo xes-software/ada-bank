@@ -4,8 +4,18 @@
 </script>
 
 <svelte:head>
-	<title>xes.software</title>
-	<meta name="description" content="Building & Educating in the Web3 Cardano Ecosystem" />
+	<title>xes.software - Cardano Web3 Developers</title>
+	<meta name="description" content="Building & Educating in the Web3 Cardano Ecosystem." />
+	<link rel="canonical" href="https://xes.software" />
+	<meta property="og:title" content="xes.software" />
+	<meta property="og:description" content="Building & Educating in the Web3 Cardano Ecosystem" />
+	<meta property="og:image" content="/logo.png" />
+	<meta property="og:url" content="https://xes.software" />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="xes.software" />
+	<meta name="twitter:description" content="Building & Educating in the Web3 Cardano Ecosystem" />
+	<meta name="twitter:image" content="/logo.png" />
 </svelte:head>
 
 <div class="mx-4 mt-12 text-center">
@@ -31,7 +41,7 @@
 	<p
 		class="mb-10 mt-12 -translate-y-4 text-balance bg-clip-text text-lg tracking-tight text-muted-foreground md:text-xl"
 	>
-		We also build fast. Days instead of weeks, months instead of years.
+		Web3 moves fast, so do we. Have it shipped in days instead of weeks, months instead of years.
 		<br class="hidden md:block" />
 	</p>
 	<a href="/contact" class={buttonVariants({ variant: 'default' })}>
