@@ -30,10 +30,10 @@
 		>
 			<ul class="block animate-text-slide text-center leading-tight [&_li]:block">
 				<li>Decentralized</li>
+				<li>on Cardano</li>
 				<li>Scalable</li>
 				<li>Secure</li>
 				<li>Beautiful</li>
-				<li>on Cardano</li>
 				<li aria-hidden="true">Decentralized</li>
 			</ul>
 		</span>
@@ -41,11 +41,12 @@
 	<p
 		class="mb-10 mt-12 -translate-y-4 text-balance bg-clip-text text-lg tracking-tight text-muted-foreground md:text-xl"
 	>
-		Web3 moves fast, so do we. Have it shipped in days instead of weeks, months instead of years.
+		Web3 moves fast, so do we. Whatever your idea, we get it shipped in days instead of weeks,
+		months instead of years.
 		<br class="hidden md:block" />
 	</p>
 	<a href="/contact" class={buttonVariants({ variant: 'default' })}>
-		<span>Let's Build Together</span>
+		<span>Let's Build on Cardano Together</span>
 		<ArrowRightIcon
 			class="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1"
 		/>
