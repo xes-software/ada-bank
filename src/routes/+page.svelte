@@ -9,13 +9,13 @@
 	<link rel="canonical" href="https://xes.software" />
 	<meta property="og:title" content="xes.software" />
 	<meta property="og:description" content="Building & Educating in the Web3 Cardano Ecosystem" />
-	<meta property="og:image" content="/logo.png" />
+	<meta property="og:image" content="https://xes.software/logo.png" />
 	<meta property="og:url" content="https://xes.software" />
 	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="xes.software" />
 	<meta name="twitter:description" content="Building & Educating in the Web3 Cardano Ecosystem" />
-	<meta name="twitter:image" content="/logo.png" />
+	<meta name="twitter:image" content="https://xes.software/logo.png" />
 </svelte:head>
 
 <div class="mx-4 mt-12 text-center">
