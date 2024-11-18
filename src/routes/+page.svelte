@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>xes.software - Cardano Web3 Developers</title>
+	<title>xes.software</title>
 	<meta name="description" content="Building & Educating in the Web3 Cardano Ecosystem." />
 	<link rel="canonical" href="https://xes.software" />
 	<meta property="og:title" content="xes.software" />
