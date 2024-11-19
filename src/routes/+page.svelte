@@ -23,16 +23,16 @@
 		class="bg-gradient-to-br from-black from-10% to-black/40 bg-clip-text
 		text-5xl font-extrabold leading-none tracking-tighter text-transparent [text-wrap:balance] dark:from-white dark:to-white/40 md:text-6xl lg:text-8xl"
 	>
-		We Build Your Web3 Applications to be
+		Premium Web3 Development Services on Cardano
 		<br />
 		<span
 			class="inline-flex h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] flex-col overflow-hidden text-indigo-500 md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] lg:h-[calc(theme(fontSize.8xl)*theme(lineHeight.tight))]"
 		>
 			<ul class="block animate-text-slide text-center leading-tight [&_li]:block">
 				<li>Decentralized</li>
-				<li>on Cardano</li>
 				<li>Scalable</li>
 				<li>Secure</li>
+				<li>Profitable</li>
 				<li>Beautiful</li>
 				<li aria-hidden="true">Decentralized</li>
 			</ul>
