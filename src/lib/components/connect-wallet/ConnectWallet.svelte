@@ -5,13 +5,15 @@
 	import { TicketX, Wallet } from 'lucide-svelte';
 	import * as Card from '$lib/components/ui/card';
 	import * as Dialog from '$lib/components/ui/dialog';
+	import { cn } from '$lib/utils';
+	let { className }: { className: string | undefined } = $props();
 </script>
 
 {#if MeshSdkState.sdk === undefined}
-	<Button disabled={true}>Loading...</Button>
+	<Button class={className} disabled={true}>Loading...</Button>
 {:else if MeshSdkState.sdk && BrowserWalletState.wallet === undefined}
 	<Dialog.Root>
-		<Dialog.Trigger class={buttonVariants({ variant: 'default' })}>
+		<Dialog.Trigger class={cn(buttonVariants({ variant: 'default' }), className)}>
 			<Wallet></Wallet>
 			<span class="text-md">Connect</span>
 		</Dialog.Trigger>
@@ -52,9 +54,10 @@
 	</Dialog.Root>
 {:else if MeshSdkState.sdk && BrowserWalletState.wallet}
 	<Button
+		class={className}
 		variant="outline"
-		onclick={async () => {
-			await BrowserWalletState.disconnectWallet();
+		onclick={() => {
+			BrowserWalletState.disconnectWallet();
 		}}
 	>
 		<Wallet></Wallet>

@@ -3,6 +3,6 @@
 	<meta name="description" content="" />
 </svelte:head>
 
-<div class="prose">
-	<h1>Learning Materials Go Here</h1>
+<div class="flex h-full w-full items-center justify-center">
+	<p class="text-xl">Coming Soon...</p>
 </div>

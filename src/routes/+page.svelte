@@ -45,7 +45,11 @@
 		months instead of years.
 		<br class="hidden md:block" />
 	</p>
-	<a href="/contact" class={buttonVariants({ variant: 'default' })}>
+	<a
+		href="https://calendar.app.google/8ysygDapGaHGiMmv8"
+		target="_blank"
+		class={buttonVariants({ variant: 'default' })}
+	>
 		<span>Let's Build on Cardano Together</span>
 		<ArrowRightIcon
 			class="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1"
