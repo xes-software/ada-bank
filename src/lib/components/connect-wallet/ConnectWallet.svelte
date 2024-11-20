@@ -46,10 +46,6 @@
 					{/each}
 				{/if}
 			</div>
-			<div class="grid gap-4 py-4">
-				<div class="grid grid-cols-4 items-center gap-4"></div>
-				<div class="grid grid-cols-4 items-center gap-4"></div>
-			</div>
 		</Dialog.Content>
 	</Dialog.Root>
 {:else if MeshSdkState.sdk && BrowserWalletState.wallet}

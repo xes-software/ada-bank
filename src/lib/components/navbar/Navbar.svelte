@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { PiggyBank } from 'lucide-svelte';
 	import Logo from '$lib/components/icons/Logo.svelte';
-	import ConnectWallet from '../connect-wallet/ConnectWallet.svelte';
+	import ConnectWallet from '$lib/components/connect-wallet/ConnectWallet.svelte';
 </script>
 
 <div class="border-b">

@@ -1,6 +1,6 @@
 {
 	"name": "ada-bank",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -16,18 +16,20 @@
 		"aiken:check": "cd aiken-workspace && aiken check"
 	},
 	"devDependencies": {
+		"@meshsdk/core": "1.7.19",
 		"@sveltejs/adapter-vercel": "5.4.7",
 		"@sveltejs/kit": "2.8.1",
 		"@sveltejs/vite-plugin-svelte": "4.0.1",
 		"@tailwindcss/typography": "0.5.15",
 		"@types/eslint": "9.6.1",
 		"autoprefixer": "10.4.20",
-		"bits-ui": "1.0.0-next.58",
+		"bits-ui": "^1.0.0-next.63",
 		"clsx": "2.1.1",
 		"eslint": "9.15.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-svelte": "2.46.0",
 		"globals": "15.12.0",
+		"lucide-svelte": "0.460.1",
 		"prettier": "3.3.3",
 		"prettier-plugin-svelte": "3.2.8",
 		"prettier-plugin-tailwindcss": "0.6.8",
@@ -43,8 +45,6 @@
 		"vite-plugin-node-polyfills": "0.22.0",
 		"vite-plugin-top-level-await": "1.4.4",
 		"vite-plugin-wasm": "3.3.0",
-		"vitest": "2.1.5",
-		"@meshsdk/core": "1.7.17",
-		"lucide-svelte": "0.460.1"
+		"vitest": "2.1.5"
 	}
 }
