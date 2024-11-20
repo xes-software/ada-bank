@@ -1,5 +1,5 @@
 {
-	"name": "xes-software",
+	"name": "ada-bank",
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
@@ -12,7 +12,8 @@
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run",
-		"aiken:build": "cd aiken-workspace && aiken build --out ./src/lib/validators/plutus.json"
+		"aiken:build": "cd aiken-workspace && aiken build --out ./src/lib/validators/plutus.json",
+		"aiken:check": "cd aiken-workspace && aiken check"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "5.4.7",
