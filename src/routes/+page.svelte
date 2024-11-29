@@ -1,7 +1,12 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
-	import Deposit from '$lib/components/action/Deposit.svelte';
-	import Withdraw from '$lib/components/action/Withdraw.svelte';
+	import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
+	import { BrowserWalletState } from '$lib/state/browser-wallet.svelte';
+	import * as Dialog from '$lib/components/ui/dialog';
+	import { Input } from '$lib/components/ui/input';
+	import { Label } from '$lib/components/ui/label';
+	import { Vault, HandCoins } from 'lucide-svelte';
+	import { cn } from '$lib/utils';
 
 	const txContent = [
 		{ name: 'Fake Name 123', address: 'addr_108184830hhuh0uht02uht2t', amount: -1001000 },
@@ -30,8 +35,8 @@
 			</p>
 		</Card.Content>
 		<Card.Footer class="flex justify-center gap-4">
-			<Deposit />
-			<Withdraw />
+			{@render depositButton()}
+			{@render withdrawButton()}
 		</Card.Footer>
 	</Card.Root>
 
@@ -53,3 +58,65 @@
 		</Card.Content>
 	</Card.Root>
 </div>
+
+{#snippet depositButton()}
+	<Dialog.Root>
+		<Dialog.Trigger
+			class={cn(
+				BrowserWalletState.browserWalletApi === undefined ? 'opacity-50' : '',
+				BrowserWalletState.browserWalletApi === undefined ? 'pointer-events-none' : '',
+				buttonVariants({ variant: 'default' })
+			)}
+		>
+			<Vault />
+			Deposit
+		</Dialog.Trigger>
+
+		<Dialog.Content class="sm:max-w-[425px]">
+			<Dialog.Header>
+				<Dialog.Title>Deposit</Dialog.Title>
+			</Dialog.Header>
+
+			<Label for="deposit-input">Amount ₳</Label>
+			<Input
+				id="deposit-input"
+				type="number"
+				class="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+			/>
+			<Dialog.Footer>
+				<Button type="submit">Create Deposit Transaction</Button>
+			</Dialog.Footer>
+		</Dialog.Content>
+	</Dialog.Root>
+{/snippet}
+
+{#snippet withdrawButton()}
+	<Dialog.Root>
+		<Dialog.Trigger
+			class={cn(
+				BrowserWalletState.browserWalletApi === undefined ? 'opacity-50' : '',
+				BrowserWalletState.browserWalletApi === undefined ? 'pointer-events-none' : '',
+				buttonVariants({ variant: 'default' })
+			)}
+		>
+			<HandCoins />
+			Withdraw
+		</Dialog.Trigger>
+
+		<Dialog.Content class="sm:max-w-[425px]">
+			<Dialog.Header>
+				<Dialog.Title>Withdraw</Dialog.Title>
+			</Dialog.Header>
+
+			<Label for="withdraw-input">Amount ₳</Label>
+			<Input
+				id="withdraw-input"
+				type="number"
+				class="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+			/>
+			<Dialog.Footer>
+				<Button type="submit">Create Withdraw Transaction</Button>
+			</Dialog.Footer>
+		</Dialog.Content>
+	</Dialog.Root>
+{/snippet}

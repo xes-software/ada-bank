@@ -1,29 +1,21 @@
-import { type BrowserWallet, type Wallet } from '@meshsdk/core';
-import { MeshSdkState } from '$lib/state/mesh-sdk.svelte';
+import { type Cip30Wallet, type BrowserWalletApi } from '$lib';
 
-let wallet: BrowserWallet | undefined = $state();
-let walletName: string | undefined = $state();
+let browserWalletApi: BrowserWalletApi | undefined = $state();
+let cip30Wallet: Cip30Wallet | undefined = $state();
 
 export const BrowserWalletState = {
-	get wallet() {
-		return wallet;
+	get browserWalletApi() {
+		return browserWalletApi;
 	},
-	get walletName() {
-		return walletName;
+	get cip30Wallet() {
+		return cip30Wallet;
 	},
-	async connectWallet(w: Wallet) {
-		if (MeshSdkState.sdk) {
-			wallet = await MeshSdkState.sdk.BrowserWallet.enable(w.id);
-			walletName = w.name
-				.split(' ')
-				.map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-				.join(' ');
-		} else {
-			throw Error('Mesh SDK is undefined. Wait until it is loaded.');
-		}
+	async connectWallet(w: Cip30Wallet) {
+		browserWalletApi = await w.enable();
+		cip30Wallet = w;
 	},
 	disconnectWallet() {
-		wallet = undefined;
-		walletName = undefined;
+		cip30Wallet = undefined;
+		browserWalletApi = undefined;
 	}
 };

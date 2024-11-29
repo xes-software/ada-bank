@@ -1,20 +1,18 @@
 <script lang="ts">
 	import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
-	import { MeshSdkState } from '$lib/state/mesh-sdk.svelte';
 	import { BrowserWalletState } from '$lib/state/browser-wallet.svelte';
-	import { TicketX, Wallet } from 'lucide-svelte';
+	import { TicketX, Wallet as WalletIcon } from 'lucide-svelte';
 	import * as Card from '$lib/components/ui/card';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { cn } from '$lib/utils';
+	import { availableWallets } from '$lib/state/available-wallets.svelte';
 	let { className }: { className: string | undefined } = $props();
 </script>
 
-{#if MeshSdkState.sdk === undefined}
-	<Button class={className} disabled={true}>Loading...</Button>
-{:else if MeshSdkState.sdk && BrowserWalletState.wallet === undefined}
+{#if BrowserWalletState.cip30Wallet === undefined}
 	<Dialog.Root>
 		<Dialog.Trigger class={cn(buttonVariants({ variant: 'default' }), className)}>
-			<Wallet></Wallet>
+			<WalletIcon></WalletIcon>
 			<span class="text-md">Connect</span>
 		</Dialog.Trigger>
 		<Dialog.Content class="sm:max-w-[425px]">
@@ -27,7 +25,7 @@
 			</Dialog.Header>
 
 			<div class="flex flex-wrap justify-center gap-4">
-				{#if MeshSdkState.availableWallets.length === 0}
+				{#if availableWallets.length === 0}
 					<Card.Root class="hover:cursor-pointer hover:bg-primary/10">
 						<Card.Content class="flex flex-col items-center">
 							<TicketX class="h-24 w-24"></TicketX>
@@ -35,7 +33,7 @@
 						>
 					</Card.Root>
 				{:else}
-					{#each MeshSdkState.availableWallets as wallet}
+					{#each availableWallets as wallet}
 						<button onclick={() => BrowserWalletState.connectWallet(wallet)}>
 							<Card.Root class="hover:cursor-pointer hover:bg-primary/10">
 								<Card.Content
@@ -48,7 +46,7 @@
 			</div>
 		</Dialog.Content>
 	</Dialog.Root>
-{:else if MeshSdkState.sdk && BrowserWalletState.wallet}
+{:else if BrowserWalletState.cip30Wallet}
 	<Button
 		class={className}
 		variant="outline"
@@ -56,7 +54,11 @@
 			BrowserWalletState.disconnectWallet();
 		}}
 	>
-		<Wallet></Wallet>
+		<img
+			class="max-h-4 max-w-4"
+			src={BrowserWalletState.cip30Wallet.icon}
+			alt="{BrowserWalletState.cip30Wallet.name} wallet icon"
+		/>
 		<span class="text-md">Connected</span>
 	</Button>
 {/if}

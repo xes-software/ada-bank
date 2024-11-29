@@ -1,14 +1,8 @@
 <script lang="ts">
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import '../app.css';
-	import { onMount } from 'svelte';
-	import { MeshSdkState } from '$lib/state/mesh-sdk.svelte';
 	import { onNavigate } from '$app/navigation';
 	let { children } = $props();
-
-	onMount(async () => {
-		await MeshSdkState.loadSdk();
-	});
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
