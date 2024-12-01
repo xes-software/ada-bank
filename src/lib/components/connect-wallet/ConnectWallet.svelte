@@ -4,12 +4,18 @@
 	import { TicketX, Wallet as WalletIcon } from 'lucide-svelte';
 	import * as Card from '$lib/components/ui/card';
 	import * as Dialog from '$lib/components/ui/dialog';
+	import { type Wallet, BrowserWallet } from '@meshsdk/core';
 	import { cn } from '$lib/utils';
-	import { availableWallets } from '$lib/state/available-wallets.svelte';
+	import { browser } from '$app/environment';
 	let { className }: { className: string | undefined } = $props();
+
+	let availableWallets: Wallet[] = $state([]);
+	if (browser) {
+		BrowserWallet.getAvailableWallets().then((wallets) => (availableWallets = wallets));
+	}
 </script>
 
-{#if BrowserWalletState.cip30Wallet === undefined}
+{#if BrowserWalletState.browserWalletApi === undefined}
 	<Dialog.Root>
 		<Dialog.Trigger class={cn(buttonVariants({ variant: 'default' }), className)}>
 			<WalletIcon></WalletIcon>

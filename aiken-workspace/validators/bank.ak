@@ -1,21 +1,17 @@
+use aiken/collection/list
 use aiken/crypto.{VerificationKeyHash}
-use cardano/transaction.{OutputReference, Transaction}
+use cardano/transaction.{OutputReference, Redeemer, Transaction}
 
-pub type BankDatum {
-  owner: VerificationKeyHash,
-}
-
-pub type Action {
-  Deposit
-  Withdraw
-}
+// pub type BankDatum {
+//   owner: VerificationKeyHash,
+// }
 
 validator savings {
   spend(
-    _datum: Option<BankDatum>,
-    _redeemer: Action,
+    datum: Option<BankDatum>,
+    _redeemer: Redeemer,
     _target: OutputReference,
-    _tx_info: Transaction,
+    tx: Transaction,
   ) {
     True
   }

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
 	import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
-	import { BrowserWalletState } from '$lib/state/browser-wallet.svelte';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
+	import { BrowserWalletState } from '$lib/state/browser-wallet.svelte';
 	import { Vault, HandCoins } from 'lucide-svelte';
 	import { cn } from '$lib/utils';
 
@@ -73,19 +73,17 @@
 		</Dialog.Trigger>
 
 		<Dialog.Content class="sm:max-w-[425px]">
-			<Dialog.Header>
-				<Dialog.Title>Deposit</Dialog.Title>
-			</Dialog.Header>
-
-			<Label for="deposit-input">Amount ₳</Label>
-			<Input
-				id="deposit-input"
-				type="number"
-				class="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-			/>
-			<Dialog.Footer>
-				<Button type="submit">Create Deposit Transaction</Button>
-			</Dialog.Footer>
+			<form class="flex flex-col gap-4">
+				<Label for="deposit-input">Amount ₳</Label>
+				<Input
+					id="deposit-input"
+					type="number"
+					class="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+				/>
+				<Dialog.Footer>
+					<Button type="submit">Create Deposit Transaction</Button>
+				</Dialog.Footer>
+			</form>
 		</Dialog.Content>
 	</Dialog.Root>
 {/snippet}
@@ -104,10 +102,6 @@
 		</Dialog.Trigger>
 
 		<Dialog.Content class="sm:max-w-[425px]">
-			<Dialog.Header>
-				<Dialog.Title>Withdraw</Dialog.Title>
-			</Dialog.Header>
-
 			<Label for="withdraw-input">Amount ₳</Label>
 			<Input
 				id="withdraw-input"
